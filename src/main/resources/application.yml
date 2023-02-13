@@ -1,12 +1,16 @@
 spring:
   application:
-    name: server
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
 
 eureka:
   client:
-    registerWithEureka: false
-    fetchRegistry: false
     serviceUrl:
       defaultZone: http://localhost:8081/eureka
 server:
-  port: 8081
+  port: 8082
